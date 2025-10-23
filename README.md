@@ -1,14 +1,14 @@
 # MyCESimulator Intro
-##Mission
+## Mission
 A repository with libraries and solved problems of Chemical engineering (CE) 
 
-##MOTIVATION
+## MOTIVATION
 - Practise Python and their libraries
 - Practise Git and documentation
 - Review and increase concepts of CE
 - Show my skills to interested parties
 
-##Legal
+## Legal
 Copyright (c) 2025 SERGIO GONZALEZ RODRIGUEZ
 (ES)
 Todos los derechos reservados.

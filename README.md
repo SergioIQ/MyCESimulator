@@ -1,2 +1,10 @@
 # MyCESimulator
 A repository with libraries and solved problems of CE
+
+Copyright (c) 2025 SERGIO GONZALEZ RODRIGUEZ
+
+Todos los derechos reservados.
+
+Este repositorio se publica únicamente con fines de visualización. 
+No se permite el uso, copia, modificación o redistribución del contenido 
+sin autorización expresa por escrito del autor.

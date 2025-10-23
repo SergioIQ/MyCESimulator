@@ -1,4 +1,8 @@
+import pandas as pd
+import numpy as np
+
 def initMB(inps, outs, compounds):
+    #compounds is a list
     flow='flow' #copy paste to avoid writing mistakes
     """Create a dataframe with columns with the name of inputs and outputs and index with studied properties
      inps and outs are numbers while prop is a list with strs"""
@@ -14,3 +18,6 @@ def initMB(inps, outs, compounds):
         streams.append('OU-'+str(i+1))
     MB=pd.DataFrame(columns=streams, index=compounds)  # Fixed: changed prop to compounds based on function parameters
     return MB
+flow='flow'
+compounds=['H2O','H2','CO2',flow]
+MB=initMB(2, 2, compounds)

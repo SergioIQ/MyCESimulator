@@ -39,3 +39,19 @@ XXX-*-MEDO-EA-N-YYY
 - A    :(0/1) include mass balance?     (YES/NO)
 - N    :Number of compounds (water, hydrogen...)
 - YYY  :In case of same code, number of the problem (1,2,3...)
+
+# Objects
+
+## Table of mass and energy balance
+
+- class
+(two tables, % and mass)
+
+| INDEX\COLUMNS  | PROP | IN-1  | IN-X  | OU-1  | OU-X  |
+| :--------------| :--: | ----: |----:  |----:  |----:  |
+| PROP           |   0  | Phase | Phase | Phase | Phase |
+| H2O            | Unit | NaN   | NaN   | NaN   | NaN   |
+| NH3            | Unit | NaN   | NaN   | NaN   | NaN   |
+| H2S            | Unit | NaN   | NaN   | NaN   | NaN   |
+| H2S            | Unit | NaN   | NaN   | NaN   | NaN   |
+ 

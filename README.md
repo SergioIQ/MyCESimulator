@@ -21,15 +21,15 @@ A repository with libraries and solved problems of Chemical engineering (CE)
 
 
 ## Step of the project :
-Currently step
+Road map
+<img width="2760" height="1866" alt="Untitled diagram-2025-10-28-023514" src="https://github.com/user-attachments/assets/d94379d1-e720-4b9b-af90-6fd4579aaf09" />
+
+currently state
 - Mass balance
 
-Future steps
 
-- Energy balance
-- Equipment Design
-- Control
-- Optimization
+
+
 
 
 # Nomenclature of files

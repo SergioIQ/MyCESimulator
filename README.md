@@ -92,6 +92,7 @@ This table will have methods to solve the mass balance
 type:
 - 1 = input
 - -1= output
+
 | INDEX\COLUMNS  | Name1 | Name2 | Name3 | Name4 |
 | :--------------| ----: |----:  |----:  |----:  |
 | type           | 1     | 1     | 1     | -1    |

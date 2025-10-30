@@ -1,0 +1,137 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct 28 22:51:25 2025
+
+@author: sergi
+"""
+
+"""
+creation=10/28/2025
+@author: sergi
+"""
+
+"""
+Beautiful code
+"""
+import os
+os.system('cls' if os.name == 'nt' else 'clear')
+"""
+Code
+"""
+
+import pandas as pd
+import numpy as np
+
+
+class NewStream:
+    '''
+    Good practises
+    objname=name
+    '''
+    def __init__(self,name,origin,destiny):
+        '''
+        Basic information
+        It is necesary to know the origin and deestiny to make mass balance in equipments
+        It is necesary a name
+        '''
+        #Stream info
+        self.name=name                                                  #str
+        self.origin=origin                                              #str
+        self.destiny=destiny                                            #str
+        
+    def df_description(self):
+        '''
+        Basic information table
+        '''
+        #Auxiliar and Temporal table 
+        description_init=['origin','destiny']                           #standar names
+        description_values=[self.origin,self.destiny]                   #values
+        description_df=pd.DataFrame(description_values,description_init)#table creation
+        description_df.rename(columns={0: self.name}, inplace=True)     #!Rename column name!
+        #Table creation
+        self.df_description=description_df                              #dataframe
+        #Show table
+        print(self.df_description)
+        
+
+    def chem_mass(self,mixture,compounds_mass):
+        #Chemical info
+        self.compounds_mass=compounds_mass                              #list,ints/floats
+        #Dataframe structure
+        chem_init=['data']                                              #standar names
+        z=len(mixture)                                                  #z COUNTER
+        for i in range(z):
+            mixture.append(mixture[i]+'%')                              #
+        mixture.append('total')                                         #
+        df_chem=pd.DataFrame(columns=chem_init, index=mixture)          #table structure 
+        #______//////______
+        #Mass in dataframe
+        for i in range(z):
+            df_chem.loc[mixture[i]]=compounds_mass[i]                   #mass
+        #Total flow
+        df_chem.loc['total']=sum(compounds_mass)
+        #Compositions
+        compounds_comp=np.array(compounds_mass)/df_chem.loc['total']
+        for i in range(z):
+            df_chem.loc[mixture[z+i]]=compounds_comp[i]                 #composition
+        #Table creation
+        self.df_chem=df_chem                                            #table creation
+        print(self.df_chem)                                             #dataframe
+        
+    def chem_comp(self,mixture,compounds_comp,flow):
+        #Chemical info
+        self.compounds_comp=compounds_comp                              #list,ints/floats
+        #Dataframe structure
+        chem_init=['data']                                              #standar names
+        z=len(mixture)                                                  #z COUNTER
+        for i in range(z):
+            mixture.append(mixture[i]+'%')                              #
+        mixture.append('total')                                         #
+        df_chem=pd.DataFrame(columns=chem_init, index=mixture)          #table structure 
+        #______//////______
+        #Comp in dataframe
+        for i in range(z):
+            df_chem.loc[mixture[i+i]]=compounds_comp[i]                   #mass
+        #Total flow
+        df_chem.loc['total']=sum(flow)
+    
+        #Mass
+        compounds_mass=np.array(compounds_comp)*df_chem.loc['total']
+        for i in range(z):
+            df_chem.loc[mixture[i]]=compounds_mass[i]                   #composition
+        #Table creation
+        self.df_chem=df_chem                                            #table creation
+        print(self.df_chem)                                             #dataframe                                  #dataframe
+                                    #show update
+    def design(self,unitsTP,P,V):
+        'Pipping design'
+        print('future update')
+    def show_all(self):
+        #row is the name of the index (use MB.index[x])
+        #p is a string (kg, %....)
+        #useful to calculate freedom degrees
+        print('basic info----\n',self.df_description)
+        print('composition----\n',self.df_chem)
+#Example
+print('Example of use')
+#Values of stream S_1
+s_1_name='s_1'
+s_1_origin='0'
+s_1_destiny='U1'
+mixture=['A','B','C']
+s_1_units=['Kg','Kg','Kg']
+s_1_values=[10,20,5]
+comp=[0.2,0.7,0.1]
+s_1_T=10
+s_1_P=10
+s_1_unitsTP=['c','atm']
+##Creation of  S_1
+s_1=NewStream(s_1_name, s_1_origin, s_1_destiny)
+## S_1 methods
+#s_1.chem_mass(s_1_mixture, s_1_values)
+'''
+Solo quedan arreglar los bucles for
+'''
+s_1.chem_mass(mixture, s_1_values)
+s_1.chem_comp(mixture, comp, 100)
+#s_1.show_all()

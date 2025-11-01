@@ -138,11 +138,6 @@ s_1_unitsTP=['c','atm']
 s_1=NewStream(s_1_name, s_1_origin, s_1_destiny)
 ## S_1 methods
 #s_1.chem_mass(s_1_mixture, s_1_values)
-'''
-Solved, Make it looks beautiful and comment
-More clear sintasix, after it, decide start with evaporator A1. 
-
-'''
 'Examples of use'
 s_1=NewStream(s_1_name, s_1_origin, s_1_destiny)
 s_1.chem_mass(mixture, s_1_mass)

@@ -16,3 +16,15 @@ sol = root(F, x0)
 print("Solución aproximada:", sol.x)
 print("Éxito:", sol.success)
 print("Número de iteraciones:", sol.nfev)
+
+
+def F(x):
+    f1 = x[0]**2 + 0*x[1] - 1   # x[1] multiplicado por cero
+    f2 = x[0]*x[1] - 0.25
+    return [f1, f2]
+
+x0 = [0.5, 0.5]
+sol = root(F, x0)
+
+print("Solución aproximada:", sol.x)
+
